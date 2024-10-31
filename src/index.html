@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500&family=Oxygen+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="index.css">
+    <title>WeatherWise</title>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">WeatherWise</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#current-time">Current Time</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#weather-details">Weather Details</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#hiking-list">Hiking</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#paragliding-list">Paragliding</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#snowboarding-list">Snowboarding</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#snorkeling-list">Snorkeling</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="plan.html">Plan</a> <!-- New Activities link in navbar -->
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Background Video -->
+    <video class="video-background" autoplay muted loop>
+        <source src="images/weather-background.mp4" type="video/mp4">
+    </video>
+
+    <main class="py-5">
+        <div class="container text-center text-light">
+            <h1 class="display-4">WeatherWise</h1>
+            <p class="lead">Weather insights for outdoor activities</p>
+
+            <!-- Current Time and Day -->
+            <div id="current-time" class="font-weight-bold mb-2"></div>
+            <div id="current-day" class="font-weight-bold mb-4"></div>
+
+            <!-- Weather Information Section -->
+            <div class="weather-section p-4 mb-5 bg-light rounded shadow-lg">
+                <h2 class="h4">Current Weather Information</h2>
+                <div id="weather-details">
+                    <p>Loading...</p>
+                </div>
+                <a id="open-weather-modal" class="btn btn-info mt-3" href="https://www.accuweather.com/" target="_blank">See More Details</a>
+                <div class="weather-search">
+                    <input type="text" id="weather-search-input" placeholder="Enter location..." />
+                    <button id="weather-search-button">Search Weather</button>
+                </div>
+                <!-- Weather Modal -->
+                <div id="weather-modal" class="modal">
+                    <div class="modal-content">
+                        <span class="close-btn">&times;</span>
+                        <h3 class="h5">Detailed Weather Information</h3>
+                        <div id="modal-weather-details"></div>
+                        <!-- Equipment Details Section -->
+                        <div id="equipment-details" class="mt-3"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="weather-details"></div>
+
+            <!-- Recommended Outdoor Activities Sections -->
+            <div class="activity-section mb-5">
+                <h2 class="h4">Top Hiking Locations</h2>
+                <ul id="hiking-list" class="list-unstyled text-left">
+                    <li>Loading hiking locations...</li>
+                </ul>
+            </div>
+
+            <div class="activity-section mb-5">
+                <h2 class="h4">Top Paragliding Locations</h2>
+                <ul id="paragliding-list" class="list-unstyled text-left">
+                    <li>Loading paragliding locations...</li>
+                </ul>
+            </div>
+
+            <div class="activity-section mb-5">
+                <h2 class="h4">Top Snowboarding Locations</h2>
+                <ul id="snowboarding-list" class="list-unstyled text-left">
+                    <li>Loading snowboarding locations...</li>
+                </ul>
+            </div>
+
+            <div class="activity-section mb-5">
+                <h2 class="h4">Top Snorkeling Locations</h2>
+                <ul id="snorkeling-list" class="list-unstyled text-left">
+                    <li>Loading snorkeling locations...</li>
+                </ul>
+            </div>
+
+            <!-- Link Button to Activity Page -->
+            <a href="plan.html" class="btn btn-primary mt-4">Plan your activity</a> 
+        </div>
+    </main>
+
+    <script src="renderer.js"></script>
+</body>
+</html>
